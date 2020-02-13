@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.wrapper {
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.gameresults {
+  width: 400px;
+  height: 100px;
+  border: 1px solid black;
+  margin-top: 15px;
+}
+
+.hangmanimg {
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.title {
+  width: 400px;
+  margin: 0;
+}
+
+.hangmanimg,
+.gameresults,
+.title {
+  position: relative;
+  left: 300px;
+}
+body {
+  font-family: sans-serif;
+}
+
+.letter {
+  display: flex;
+  list-style: none;
+  width: 20px;
+  margin: 0 5px;
+  border-bottom: 1px solid black;
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+}
+
+.current-word {
+  list-style: none;
+}
+.output {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.correct {
+  background-color: green;
+  transition: all 1s ease;
+}
+.error {
+  color: red;
+  opacity: 1;
+}
+.warning {
+  color: orange;
+  opacity: 1;
+}
+.win {
+  color: green;
+  opacity: 1;
+}
+#underscores {
+  align-items: center;
+  margin-top: 50px;
+  letter-spacing: 80px;
+  left: 550px;
+}
+
+button {
+  padding-top: 10px;
+  margin-top: 15px;
+  border: 1px solid black;
+  padding: 10px;
+}
