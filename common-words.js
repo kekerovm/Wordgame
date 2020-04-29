@@ -18,7 +18,7 @@ const commonWords = [
 
   const randIndex = Math.floor(Math.random() * words.length)
   var turns = 5
-  $("#turns").html(turns + " guesses left")
+  var guesses = 0
 
   const answer = words[randIndex]
   console.log(answer)
@@ -42,12 +42,19 @@ const commonWords = [
       var val = $(this).html()
 
       if (answer.indexOf(val) === -1) {
-        turns -= 1
-        if (turns === 0) {
-            $("#game").html("<h1>You Lose:(</h1>")
-
+        guesses += 1
+        if (guesses === turns) {
+            var perc = 100 / turns * (turns - guesses)
+            console.log(perc)
+            $("meter").css('width', perc + "%")
+            setTimeout(() => {
+                $("#game").html("<h1>You Lose:(</h1>")
+            }, 1000)
         } else {
-          $("#turns").html(turns + " guesses left")
+          var perc = 100 / turns * (turns - guesses)
+          console.log(perc)
+          $("meter").css('width', perc + "%")
+        //   $("#turns").html(turns + " guesses left")
         }
       } else { 
         answer.split("").forEach((l, i) => {
